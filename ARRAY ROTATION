@@ -1,0 +1,27 @@
+#include <stdio.h>
+void rotate(int ar[],int s,int size)
+{
+    while(s>0)
+    {
+        int temp=ar[0];
+        for(int i=1;i<size;i++)
+        {
+            ar[i-1]=ar[i];
+        }
+        ar[size-1]=temp;
+        s=s-1;
+    }
+    for(int i=0;i<size;i++)
+    {
+        printf("%d ",ar[i]);
+    }
+}
+int main()
+{
+	int arr[] = {10,18,6,9,17,25};
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int d;
+	scanf("%d",&d);
+	rotate(arr,d,n);
+	return 0;
+}
